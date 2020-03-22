@@ -9,7 +9,9 @@
 import Cocoa
 
 class ViewController: NSViewController {
-
+    
+    @IBOutlet weak var searchField: NSSearchField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

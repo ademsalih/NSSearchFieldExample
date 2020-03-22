@@ -11,6 +11,12 @@
 		D20AC3F92427FAD9006329D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20AC3F82427FAD9006329D7 /* ViewController.swift */; };
 		D20AC3FB2427FADB006329D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D20AC3FA2427FADB006329D7 /* Assets.xcassets */; };
 		D20AC3FE2427FADB006329D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D20AC3FC2427FADB006329D7 /* Main.storyboard */; };
+		D20AC40C2427FEEE006329D7 /* SuggestionsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20AC4072427FEEE006329D7 /* SuggestionsWindowController.swift */; };
+		D20AC40D2427FEEE006329D7 /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20AC4082427FEEE006329D7 /* RoundedCornersView.swift */; };
+		D20AC40E2427FEEE006329D7 /* SuggestibleTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20AC4092427FEEE006329D7 /* SuggestibleTextFieldCell.swift */; };
+		D20AC40F2427FEEE006329D7 /* HighlightingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20AC40A2427FEEE006329D7 /* HighlightingView.swift */; };
+		D20AC4102427FEEE006329D7 /* SuggestionsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20AC40B2427FEEE006329D7 /* SuggestionsWindow.swift */; };
+		D20AC4122427FF50006329D7 /* suggestionprototype.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20AC4112427FF50006329D7 /* suggestionprototype.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +27,12 @@
 		D20AC3FD2427FADB006329D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D20AC3FF2427FADB006329D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D20AC4002427FADB006329D7 /* SearchFieldExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SearchFieldExample.entitlements; sourceTree = "<group>"; };
+		D20AC4072427FEEE006329D7 /* SuggestionsWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsWindowController.swift; sourceTree = "<group>"; };
+		D20AC4082427FEEE006329D7 /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
+		D20AC4092427FEEE006329D7 /* SuggestibleTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestibleTextFieldCell.swift; sourceTree = "<group>"; };
+		D20AC40A2427FEEE006329D7 /* HighlightingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightingView.swift; sourceTree = "<group>"; };
+		D20AC40B2427FEEE006329D7 /* SuggestionsWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsWindow.swift; sourceTree = "<group>"; };
+		D20AC4112427FF50006329D7 /* suggestionprototype.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = suggestionprototype.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +67,26 @@
 			children = (
 				D20AC3F62427FAD9006329D7 /* AppDelegate.swift */,
 				D20AC3F82427FAD9006329D7 /* ViewController.swift */,
+				D20AC4062427FE11006329D7 /* SearchField */,
 				D20AC3FA2427FADB006329D7 /* Assets.xcassets */,
 				D20AC3FC2427FADB006329D7 /* Main.storyboard */,
 				D20AC3FF2427FADB006329D7 /* Info.plist */,
 				D20AC4002427FADB006329D7 /* SearchFieldExample.entitlements */,
 			);
 			path = SearchFieldExample;
+			sourceTree = "<group>";
+		};
+		D20AC4062427FE11006329D7 /* SearchField */ = {
+			isa = PBXGroup;
+			children = (
+				D20AC4072427FEEE006329D7 /* SuggestionsWindowController.swift */,
+				D20AC40B2427FEEE006329D7 /* SuggestionsWindow.swift */,
+				D20AC4082427FEEE006329D7 /* RoundedCornersView.swift */,
+				D20AC40A2427FEEE006329D7 /* HighlightingView.swift */,
+				D20AC4092427FEEE006329D7 /* SuggestibleTextFieldCell.swift */,
+				D20AC4112427FF50006329D7 /* suggestionprototype.xib */,
+			);
+			path = SearchField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D20AC3FB2427FADB006329D7 /* Assets.xcassets in Resources */,
+				D20AC4122427FF50006329D7 /* suggestionprototype.xib in Resources */,
 				D20AC3FE2427FADB006329D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,8 +160,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D20AC40C2427FEEE006329D7 /* SuggestionsWindowController.swift in Sources */,
 				D20AC3F92427FAD9006329D7 /* ViewController.swift in Sources */,
+				D20AC40F2427FEEE006329D7 /* HighlightingView.swift in Sources */,
 				D20AC3F72427FAD9006329D7 /* AppDelegate.swift in Sources */,
+				D20AC40D2427FEEE006329D7 /* RoundedCornersView.swift in Sources */,
+				D20AC40E2427FEEE006329D7 /* SuggestibleTextFieldCell.swift in Sources */,
+				D20AC4102427FEEE006329D7 /* SuggestionsWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
