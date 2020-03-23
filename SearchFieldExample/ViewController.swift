@@ -11,7 +11,8 @@ import Cocoa
 class ViewController: NSViewController, NSSearchFieldDelegate {
     
     @IBOutlet weak var searchField: NSSearchField!
-    
+    private var suggestionsController: SuggestionsWindowController?
+    private var skipNextSuggestion = false
     private var window: NSWindow = NSWindow()
     
     override func viewDidLoad() {
@@ -26,7 +27,7 @@ class ViewController: NSViewController, NSSearchFieldDelegate {
         window = self.view.window!
     }
 
-    @IBAction func updaate(_ sender: Any) {
+    @IBAction func searchFieldValueDidUpdate(_ sender: Any) {
         let entry = (sender as? SuggestionsWindowController)?.selectedSuggestion()
         if entry != nil && !entry!.isEmpty {
             let fieldEditor: NSText? = window.fieldEditor(false, for: searchField)
@@ -36,31 +37,24 @@ class ViewController: NSViewController, NSSearchFieldDelegate {
         }
     }
     
-    private var suggestionsController: SuggestionsWindowController?
-    private var skipNextSuggestion = false
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         searchField.delegate = self
     }
 
     func suggestions(forText text: String?) -> [[String: Any]]? {
         let stringVals = [
-            "Istanbul, Istanbul, Turkey",
             "Bergen, Vestland, Norway",
             "Berlin, Berlin, Germany",
             "Copenhagen, Capital Region, Denmark",
+            "Cairo, Cairo, Egypt",
+            "Delhi, Delhi, India",
             "Denver, Colorado, United States",
             "Drammen, Viken, Norway",
-            "Edinburgh, Scotland, United Kingdom",
-            "Fredrikstad, Viken, Norway",
-            "Cairo, Cairo, Egypt",
-            "Krakow, Lesser Poland, Poland",
+            "Dublin, Leinster, Ireland",
             "London, England, United Kingdom",
             "Larvik, Vestfold og Telemark, Norway",
             "Oslo, Oslo, Norway",
             "Odda, Vestland, Norway",
-            "Riga, Riga, Latvia",
-            "Røros, Trøndelag, Norway",
             "Tokyo, Tokyo, Japan",
             "Trondheim, Trøndelag, Norway",
             "Tunis, Tunis, Tunisia"
@@ -137,22 +131,12 @@ class ViewController: NSViewController, NSSearchFieldDelegate {
             if suggestionsController == nil {
                 suggestionsController = SuggestionsWindowController()
                 suggestionsController?.target = self
-                suggestionsController?.action = #selector(self.updaate(_:))
+                suggestionsController?.action = #selector(self.searchFieldValueDidUpdate(_:))
             }
             updateSuggestions(from: obj.object as? NSControl)
         }
     }
-    
-    @objc func update(withSelectedSuggestion sender: Any) {
-        let entry = (sender as? SuggestionsWindowController)?.selectedSuggestion()
-        if entry != nil && !entry!.isEmpty {
-            let fieldEditor: NSText? = window.fieldEditor(false, for: searchField)
-            if fieldEditor != nil {
-                updateFieldEditor(fieldEditor, withSuggestion: entry![kSuggestionLabel] as? String)
-            }
-        }
-    }
-    
+
     /* As the delegate for the NSTextField, this class is given a chance to respond to the key binding commands interpreted by the input manager when the field editor calls -interpretKeyEvents:. This is where we forward some of the keyboard commands to the suggestion window to facilitate keyboard navigation. Also, this is where we can determine when the user deletes and where we can prevent AppKit's auto completion.
      */
     func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {

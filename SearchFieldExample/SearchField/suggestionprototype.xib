@@ -13,11 +13,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="1" customClass="HighlightingView" customModule="SearchFieldExample" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="222" height="20"/>
+            <rect key="frame" x="0.0" y="0.0" width="222" height="22"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4">
-                    <rect key="frame" x="11" y="2" width="201" height="16"/>
+                    <rect key="frame" x="11" y="3" width="201" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="5">
                         <font key="font" metaFont="controlContent"/>

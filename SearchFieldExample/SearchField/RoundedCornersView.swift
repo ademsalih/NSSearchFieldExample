@@ -21,5 +21,9 @@ class RoundedCornersView: NSView {
     override var isFlipped: Bool {
         return true
     }
+    
+    override var allowsVibrancy: Bool {
+        return true
+    }
 
 }
