@@ -717,6 +717,9 @@
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </searchFieldCell>
+                                <connections>
+                                    <action selector="updaate:" target="XfG-lQ-9wD" id="qcn-9d-bLM"/>
+                                </connections>
                             </searchField>
                         </subviews>
                     </view>
@@ -726,7 +729,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="524"/>
+            <point key="canvasLocation" x="74" y="553"/>
         </scene>
     </scenes>
 </document>
