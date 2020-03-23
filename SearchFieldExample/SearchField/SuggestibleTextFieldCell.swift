@@ -13,5 +13,6 @@ class SuggestibleTextFieldCell: NSSearchFieldCell {
         super.draw(withFrame: cellFrame, in: controlView)
         self.textColor = textColor
     }
+    
 
 }
