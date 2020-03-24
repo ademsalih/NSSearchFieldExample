@@ -37,10 +37,6 @@ class ViewController: NSViewController, NSSearchFieldDelegate {
         }
     }
     
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        searchField.delegate = self
-    }
-
     func suggestions(forText text: String?) -> [[String: Any]]? {
         let stringVals = [
             "Bergen, Vestland, Norway",
@@ -119,13 +115,10 @@ class ViewController: NSViewController, NSSearchFieldDelegate {
         }
     }
     
-
-    
     func controlTextDidEndEditing(_ obj: Notification) {
         suggestionsController?.cancelSuggestions()
     }
     
-
     func controlTextDidBeginEditing(_ obj: Notification) {
         if !skipNextSuggestion {
             // We keep the suggestionsController around, but lazely allocate it the first time it is needed.
